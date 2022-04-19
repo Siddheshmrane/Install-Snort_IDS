@@ -1,0 +1,22 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+  
+  - name: install SnortIDS package
+    apt: 
+      name: 
+        - libpcap-dev
+        - bison
+        - flex
+
+      state: latest
+      update_cache: yes
+  
+
+  - name: install Snort
+    apt:
+      name:
+        - snort
+     
